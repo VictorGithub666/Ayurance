@@ -17,7 +17,7 @@
 
   <style>
     /* =========================================================
-       TOKENS
+       TOKENS (kept exactly as original)
     ========================================================= */
     :root {
       --saffron:    #f4801f;   /* primary accent 70% */
@@ -42,7 +42,6 @@
       overflow-x: hidden;
     }
 
-    /* Display / headings use Cormorant */
     h1, h2, h3, h4, h5 {
       font-family: 'Cormorant Garamond', Georgia, serif;
       color: var(--bark);
@@ -52,7 +51,7 @@
     a { text-decoration: none; }
 
     /* =========================================================
-       HEADER
+       HEADER (unchanged)
     ========================================================= */
     #header {
       position: fixed;
@@ -115,7 +114,6 @@
     }
     .btn-book:hover { background: #d96f18; color: #fff; transform: scale(1.02); }
 
-    /* Mobile nav */
     .mobile-nav-toggle {
       display: none;
       font-size: 1.5rem;
@@ -135,7 +133,7 @@
     }
 
     /* =========================================================
-       HERO
+       HERO (unchanged)
     ========================================================= */
     #hero {
       background: linear-gradient(135deg, #fff8f0 0%, #fdf3e3 60%, #f6f9f0 100%);
@@ -146,8 +144,6 @@
       position: relative;
       overflow: hidden;
     }
-
-    /* decorative mandala ring */
     #hero::before {
       content: '';
       position: absolute;
@@ -305,7 +301,7 @@
     }
 
     /* =========================================================
-       ABOUT
+       ABOUT (unchanged)
     ========================================================= */
     #about .about-img {
       border-radius: 28px;
@@ -347,7 +343,7 @@
     .dosha-chip.kapha { background: rgba(30,43,28,0.06); color: #1e2b1c; border: 1px solid rgba(30,43,28,0.15); }
 
     /* =========================================================
-       THERAPIES
+       THERAPIES — UPDATED with main/supportive & Punah Garbha Pravesh
     ========================================================= */
     #therapies { background: var(--sand); }
 
@@ -426,8 +422,68 @@
       width: 100%;
     }
 
+    /* badge for main therapies */
+    .therapy-badge {
+      display: inline-block;
+      background: var(--saffron);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 2px 12px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+      align-self: flex-start;
+    }
+    .therapy-badge.supportive {
+      background: var(--leaf);
+    }
+
     /* =========================================================
-       CONDITIONS
+       REPAIRED & REJUVENATED SYSTEMS (new section)
+    ========================================================= */
+    #systems {
+      background: var(--white);
+    }
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .system-item {
+      background: var(--sand);
+      border-radius: 20px;
+      padding: 18px 12px;
+      text-align: center;
+      border: 1px solid #ede8e0;
+      transition: 0.2s;
+    }
+    .system-item:hover {
+      border-color: var(--saffron);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+    .system-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 6px;
+      border-radius: 12px;
+      background: #fff;
+      padding: 4px;
+    }
+    .system-item span {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--bark);
+      letter-spacing: 0.3px;
+    }
+
+    /* =========================================================
+       CONDITIONS (unchanged)
     ========================================================= */
     #conditions { background: #fff; }
     .condition-badge {
@@ -450,7 +506,7 @@
     }
 
     /* =========================================================
-       WHY AYU  (small trust strip)
+       WHY AYU  (trust strip)
     ========================================================= */
     #why { background: var(--bark); }
     .why-item {
@@ -468,7 +524,7 @@
     .why-item p { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin: 6px 0 0; letter-spacing: 0.5px; }
 
     /* =========================================================
-       CONTACT
+       CONTACT (unchanged)
     ========================================================= */
     #contact { background: var(--sand); }
 
@@ -535,7 +591,7 @@
     }
 
     /* =========================================================
-       MAP
+       MAP (unchanged)
     ========================================================= */
     #map-section { background: #fff; padding: 0; }
     .map-embed {
@@ -546,7 +602,7 @@
     }
 
     /* =========================================================
-       FOOTER
+       FOOTER (unchanged)
     ========================================================= */
     #footer {
       background: var(--bark);
@@ -614,15 +670,12 @@
 </head>
 <body>
 
-  <!-- ===================== HEADER ===================== -->
+  <!-- ===================== HEADER (unchanged) ===================== -->
   <header id="header">
     <div class="container d-flex align-items-center justify-content-between">
       <a href="#hero" class="navbar-brand">
-        <img width="170" height="80"  src="ayu-logo.png" alt="AYU Panchakarma logo">
-        <!--<span class="logo-text">AYU<span>.</span></span>
-        <span class="logo-sub">Panchakarma</span>-->
+        <img width="170" height="80" src="ayu-logo.png" alt="AYU Panchakarma logo">
       </a>
-
       <nav class="navmenu" id="navmenu">
         <ul>
           <li><a href="#hero" class="active">Home</a></li>
@@ -632,7 +685,6 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
       <div class="d-flex align-items-center gap-3">
         <a href="#contact" class="btn-book d-none d-md-inline-block">Book Consultation</a>
         <button class="mobile-nav-toggle bi bi-list" id="mobileToggle" aria-label="Toggle menu"></button>
@@ -641,11 +693,10 @@
   </header>
 
   <main>
-    <!-- ===================== HERO ===================== -->
+    <!-- ===================== HERO (unchanged) ===================== -->
     <section id="hero">
       <div class="container">
         <div class="row align-items-center gy-5">
-
           <div class="col-lg-6">
             <p class="hero-eyebrow">Authentic Ayurvedic Healing</p>
             <h1>Restore Balance.<br><em>Renew</em> the Body.<br>Revive the Soul.</h1>
@@ -662,28 +713,21 @@
               <div class="hero-stat"><i class="bi bi-check-circle-fill"></i> Nairobi · UK · India</div>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="hero-image-wrap">
-              <img src="shirodhara.avif"
-                   onerror="this.src='shirodhara-01.jpg'; this.onerror=null;"
-                   alt="Shirodhara Ayurvedic therapy"
-                   class="img-fluid">
-
+              <img src="shirodhara.avif" onerror="this.src='shirodhara-01.jpg'; this.onerror=null;" alt="Shirodhara Ayurvedic therapy" class="img-fluid">
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ===================== ABOUT ===================== -->
+    <!-- ===================== ABOUT (unchanged) ===================== -->
     <section id="about">
       <div class="container">
         <div class="row align-items-center gy-5">
           <div class="col-lg-5">
-            <img src="abhyang.jpeg" alt="Abhyanga therapy at AYU" class="about-img"
-                 onerror="this.style.background='linear-gradient(135deg,#fef3e2,#f6f9f0)'; this.src=''; this.alt='';">
+            <img src="abhyang.jpeg" alt="Abhyanga therapy at AYU" class="about-img" onerror="this.style.background='linear-gradient(135deg,#fef3e2,#f6f9f0)'; this.src=''; this.alt='';">
           </div>
           <div class="col-lg-6 offset-lg-1">
             <span class="section-eyebrow">Who We Are</span>
@@ -714,7 +758,7 @@
       </div>
     </section>
 
-    <!-- ===================== WHY STRIP ===================== -->
+    <!-- ===================== WHY STRIP (unchanged) ===================== -->
     <section id="why" style="padding: 20px 0;">
       <div class="container">
         <div class="row">
@@ -746,7 +790,7 @@
       </div>
     </section>
 
-    <!-- ===================== THERAPIES ===================== -->
+    <!-- ===================== THERAPIES (UPDATED) ===================== -->
     <section id="therapies">
       <div class="container">
         <div class="text-center mb-5">
@@ -758,119 +802,138 @@
 
         <div class="row gy-4">
 
-          <!-- Shirodhara -->
+          <!-- Vamana (Main) -->
           <div class="col-md-6 col-lg-4">
             <div class="therapy-card">
-              <img src="shirodhara-01.jpg" alt="Shirodhara therapy" class="therapy-card-img"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="therapy-card-img-placeholder" style="display:none;">
-                <i class="bi bi-water"></i>
-              </div>
+              <img src="vamana.png" alt="Vamana therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-droplet"></i></div>
               <div class="therapy-card-body">
-                <div class="therapy-card-icon"><i class="bi bi-water"></i></div>
-                <h4>Shirodhara</h4>
-                <p>A continuous stream of warm medicated liquid — herbal oil, milk, or buttermilk — poured gently over the forehead. Deeply relaxes the nervous system; indicated for stress, insomnia, and anxiety.</p>
-                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Nervous System · Mind</span>
+                <span class="therapy-badge">Main Therapy</span>
+                <div class="therapy-card-icon"><i class="bi bi-arrow-up-circle"></i></div>
+                <h4>Vamana</h4>
+                <p>Controlled, physician-supervised therapeutic emesis to expel excess Kapha dosha and accumulated toxins from the stomach and respiratory tract.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Therapeutic Vomiting · Kapha</span>
               </div>
             </div>
           </div>
 
-          <!-- Nasya -->
+          <!-- Virechana (Main) -->
           <div class="col-md-6 col-lg-4">
             <div class="therapy-card">
-              <img src="nasya.jpg" alt="Nasya therapy" class="therapy-card-img"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="therapy-card-img-placeholder" style="display:none;">
-                <i class="bi bi-lungs"></i>
-              </div>
+              <img src="virechana.jpg" alt="Virechana therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-droplet-half"></i></div>
               <div class="therapy-card-body">
-                <div class="therapy-card-icon"><i class="bi bi-lungs"></i></div>
-                <h4>Nasya</h4>
-                <p>Gentle administration of herbal oils, ghee, or powders into the nostrils. Detoxifies and nourishes the head and neck — targeting congestion, sinus issues, migraines, and mental stress.</p>
-                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Head · Sinus · Migraine</span>
+                <span class="therapy-badge">Main Therapy</span>
+                <div class="therapy-card-icon"><i class="bi bi-arrow-down-circle"></i></div>
+                <h4>Virechana</h4>
+                <p>Classical Ayurvedic controlled therapeutic purgation to eliminate excess Pitta dosha and flush accumulated toxins through the lower GI tract.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Therapeutic Diarrhoea · Pitta</span>
               </div>
             </div>
           </div>
 
-          <!-- Vasti -->
+          <!-- Vasti (Main) -->
           <div class="col-md-6 col-lg-4">
             <div class="therapy-card">
-              <img src="vasti.jpg" alt="Vasti therapy" class="therapy-card-img"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="therapy-card-img-placeholder" style="display:none;">
-                <i class="bi bi-droplet-half"></i>
-              </div>
+              <img src="vasti.jpg" alt="Vasti therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-droplet-half"></i></div>
               <div class="therapy-card-body">
+                <span class="therapy-badge">Main Therapy</span>
                 <div class="therapy-card-icon"><i class="bi bi-droplet-half"></i></div>
                 <h4>Vasti (Basti)</h4>
-                <p>Medicated enema therapy — detoxifies the colon, balances Vata dosha, and nourishes deep tissues. Considered half of all Ayurvedic therapeutics due to its far-reaching restorative effects.</p>
-                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Colon · Vata · Digestion</span>
+                <p>Introduction of medicated oils or herbal decoctions into the colon through the rectum. Balances Vata and nourishes deep tissues.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Therapeutic Enema · Vata · Colon</span>
               </div>
             </div>
           </div>
 
-          <!-- Janu Vasti -->
+          <!-- Raktamoksha (Main) -->
           <div class="col-md-6 col-lg-4">
             <div class="therapy-card">
-              <img src="janu-vasti.jpg" alt="Janu Vasti therapy" class="therapy-card-img"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="therapy-card-img-placeholder" style="display:none;">
-                <i class="bi bi-person-walking"></i>
-              </div>
+              <img src="raktamokshana.jpg" alt="Raktamoksha therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-droplet"></i></div>
               <div class="therapy-card-body">
+                <span class="therapy-badge">Main Therapy</span>
+                <div class="therapy-card-icon"><i class="bi bi-droplet"></i></div>
+                <h4>Raktamoksha</h4>
+                <p>Classical bloodletting and purification therapy to eliminate vitiated blood and toxins, particularly driven by aggravated Pitta dosha.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Therapeutic Blood Letting · Pitta</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nasya (Main) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="nasya.jpg" alt="Nasya therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-lungs"></i></div>
+              <div class="therapy-card-body">
+                <span class="therapy-badge">Main Therapy</span>
+                <div class="therapy-card-icon"><i class="bi bi-lungs"></i></div>
+                <h4>Nasya</h4>
+                <p>Administration of medicinal oils, herbal juices, or powders into the nasal passages. Cleanses and nourishes the head and neck.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Therapeutic Brain Cleansing · Sinus</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Janu Vasti (Supportive) -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="janu-vasti.jpg" alt="Janu Vasti therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-person-walking"></i></div>
+              <div class="therapy-card-body">
+                <span class="therapy-badge supportive">Supportive</span>
                 <div class="therapy-card-icon"><i class="bi bi-person-walking"></i></div>
                 <h4>Janu Vasti</h4>
-                <p>Warm medicated herbal oil retained over the knee joint inside a black gram dough dam. Highly effective for knee pain, stiffness, joint degeneration, and osteoarthritis.</p>
+                <p>Warm medicated herbal oil retained over the knee joint inside a black gram dough dam. Highly effective for knee pain, stiffness, and osteoarthritis.</p>
                 <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Knees · Joints · Arthritis</span>
               </div>
             </div>
           </div>
 
-          <!-- Kati Vasti -->
+          <!-- Kati Vasti (Supportive) -->
           <div class="col-md-6 col-lg-4">
             <div class="therapy-card">
-              <img src="kati-vasti.jpg" alt="Kati Vasti therapy" class="therapy-card-img"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="therapy-card-img-placeholder" style="display:none;">
-                <i class="bi bi-back"></i>
-              </div>
+              <img src="kati-vasti.jpg" alt="Kati Vasti therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-back"></i></div>
               <div class="therapy-card-body">
+                <span class="therapy-badge supportive">Supportive</span>
                 <div class="therapy-card-icon"><i class="bi bi-back"></i></div>
                 <h4>Kati Vasti</h4>
-                <p>Warm medicated oil pooled over the lower back within a dough dam. Provides deep tissue heat — pacifying Vata to relieve chronic back pain, sciatica, lumbar spondylosis, and muscle spasms.</p>
+                <p>Warm medicated oil pooled over the lower back within a dough dam. Relieves chronic back pain, sciatica, lumbar spondylosis, and muscle spasms.</p>
                 <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Back · Sciatica · Spine</span>
               </div>
             </div>
           </div>
 
-          <!-- Abhyanga -->
+          <!-- Abhyanga (Supportive) -->
           <div class="col-md-6 col-lg-4">
             <div class="therapy-card">
-              <img src="abhyang.jpeg" alt="Abhyanga therapy" class="therapy-card-img"
-                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="therapy-card-img-placeholder" style="display:none;">
-                <i class="bi bi-hand-index-thumb"></i>
-              </div>
+              <img src="abhyang.jpeg" alt="Abhyanga therapy" class="therapy-card-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;"><i class="bi bi-hand-index-thumb"></i></div>
               <div class="therapy-card-body">
+                <span class="therapy-badge supportive">Supportive</span>
                 <div class="therapy-card-icon"><i class="bi bi-hand-index-thumb"></i></div>
                 <h4>Abhyanga</h4>
-                <p>Rhythmic, full-body warm herbal oil massage. Loosens deep-seated toxins, lubricates joints, and pacifies the nervous system. Oils custom-blended to your dosha and massaged toward the heart.</p>
+                <p>Rhythmic, full-body warm herbal oil massage. Loosens deep-seated toxins, lubricates joints, and pacifies the nervous system.</p>
                 <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Full Body · Lymphatic · Dosha</span>
               </div>
             </div>
           </div>
 
-          <!-- Punah Garbha Pravesh -->
+          <!-- Punah Garbha Pravesh (separate section) -->
           <div class="col-md-6 col-lg-4 mx-auto">
-            <div class="therapy-card">
+            <div class="therapy-card" style="border-color: var(--saffron);">
               <div class="therapy-card-img-placeholder" style="background: linear-gradient(135deg,#1e2b1c,#2d4028);">
                 <i class="bi bi-stars" style="color: rgba(244,128,31,0.7); font-size: 3rem;"></i>
               </div>
               <div class="therapy-card-body">
+                <span class="therapy-badge" style="background: #b8860b;">Separate Therapy</span>
                 <div class="therapy-card-icon"><i class="bi bi-arrow-repeat"></i></div>
                 <h4>Punah Garbha Pravesh</h4>
-                <p>"Re-entering the womb" — an intensive Panchakarma protocol that combines deep bio-purification with spiritual and yogic renewal, facilitating a profound rebirth of the body, mind, and spirit.</p>
-                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Rebirth · Spirit · Deep Detox</span>
+                <p><strong>For conditions not cured by any pathies</strong> — COPD, Parkinson's, autoimmune disorders. Anti-ageing Panchakarma that heals and repairs DNA at the cellular level.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Rebirth · DNA repair · Spirit</span>
               </div>
             </div>
           </div>
@@ -879,7 +942,34 @@
       </div>
     </section>
 
-    <!-- ===================== CONDITIONS ===================== -->
+    <!-- ===================== REPAIRED & REJUVENATED SYSTEMS (NEW) ===================== -->
+    <section id="systems" class="light-bg">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow">Holistic Renewal</span>
+          <h2 class="section-heading">Repaired &amp; <em>Rejuvenated</em> Systems</h2>
+          <span class="underline-accent center"></span>
+          <p class="section-sub mx-auto">Through deep Panchakarma detox and DNA-repair therapies, every system is restored to its natural balance and vitality.</p>
+        </div>
+        <div class="system-grid">
+          <div class="system-item"><img src="nervous-system.webp" alt="Nervous System"><span>Nervous System</span></div>
+          <div class="system-item"><img src="spinal-cord.webp" alt="Spinal Cord"><span>Spinal Cord</span></div>
+          <div class="system-item"><img src="circulatory-system.jpg" alt="Circulatory System"><span>Circulatory System</span></div>
+          <div class="system-item"><img src="digestive-system.jpg" alt="Digestive System"><span>Digestive System</span></div>
+          <div class="system-item"><img src="skeletal-system.png" alt="Skeletal System"><span>Skeletal System</span></div>
+          <div class="system-item"><img src="lymphatic-system.jpg" alt="Lymphatic System"><span>Lymphatic System</span></div>
+          <div class="system-item"><img src="muscular-system.avif" alt="Muscular System"><span>Muscular System</span></div>
+          <div class="system-item"><img src="endocrine-system.jpg" alt="Endocrine System"><span>Endocrine System</span></div>
+          <div class="system-item"><img src="urinary-system.jpeg" alt="Urinary System"><span>Urinary System</span></div>
+          <div class="system-item"><img src="reproductive-system.webp" alt="Reproductive System"><span>Reproductive System</span></div>
+          <div class="system-item"><img src="cardio-vascular-system.jpg" alt="Cardiovascular System"><span>Cardiovascular System</span></div>
+          <div class="system-item"><img src="respiratory-system.jpg" alt="Respiratory System"><span>Respiratory System</span></div>
+          <div class="system-item"><img src="integumentary-system.webp" alt="Integumentary System"><span>Integumentary System</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONDITIONS (unchanged) ===================== -->
     <section id="conditions" class="light-bg">
       <div class="container">
         <div class="text-center mb-5">
@@ -932,7 +1022,7 @@
       </div>
     </section>
 
-    <!-- ===================== CONTACT ===================== -->
+    <!-- ===================== CONTACT (unchanged) ===================== -->
     <section id="contact">
       <div class="container">
         <div class="text-center mb-5">
@@ -1014,19 +1104,19 @@
       </div>
     </section>
 
-    <!-- ===================== MAP ===================== -->
+    <!-- ===================== MAP (unchanged) ===================== -->
     <section id="map-section">
-      <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d276.24608146551384!2d36.81264958625286!3d-1.2619665108343308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sshayona!5e1!3m2!1sen!2ske!4v1782462221961!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="AYU Panchakarma location – Nairobi">></iframe>
+      <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d276.24608146551384!2d36.81264958625286!3d-1.2619665108343308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sshayona!5e1!3m2!1sen!2ske!4v1782462221961!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="AYU Panchakarma location – Nairobi"></iframe>
     </section>
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== FOOTER (unchanged) ===================== -->
   <footer id="footer">
     <div class="container">
       <div class="row gy-4 align-items-start">
         <div class="col-md-4">
-          <div class="footer-brand pb-3" >
+          <div class="footer-brand pb-3">
             <img width="200" height="80" src="ayu-logo.png" alt="AYU Panchakarma logo">
           </div>
           <div class="footer-social">
@@ -1040,9 +1130,11 @@
         <div class="col-md-4">
           <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Therapies</p>
           <ul style="list-style:none; padding:0; margin:0;">
-            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem; transition:color 0.2s;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Shirodhara</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem; transition:color 0.2s;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Vamana</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Virechana</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Vasti</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Raktamoksha</a></li>
             <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Nasya</a></li>
-            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Vasti (Basti)</a></li>
             <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Janu Vasti</a></li>
             <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Kati Vasti</a></li>
             <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Abhyanga</a></li>
@@ -1136,7 +1228,7 @@
       });
     }, { threshold: 0.12 });
 
-    document.querySelectorAll('.therapy-card, .contact-info-card, .contact-form-card, .condition-badge, .about-bullet').forEach(el => {
+    document.querySelectorAll('.therapy-card, .contact-info-card, .contact-form-card, .condition-badge, .about-bullet, .system-item').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
