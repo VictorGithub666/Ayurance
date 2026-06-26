@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYU · Ayurvedic Panchakarma – Nairobi · UK · India</title>
+  <meta name="description" content="AYU Ayurvedic Panchakarma – authentic five-step detox & rejuvenation. 7 specialised therapies, 40+ conditions. Nairobi, UK & India.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    /* =========================================================
+       TOKENS
+    ========================================================= */
+    :root {
+      --saffron:    #f4801f;   /* primary accent 70% */
+      --leaf:       #83cd2a;   /* secondary accent 20% */
+      --bark:       #1e2b1c;   /* dark base */
+      --sand:       #faf6f0;   /* warm off-white */
+      --cream:      #fff8f0;   /* hero bg */
+      --mist:       #f2f5ee;   /* light section bg */
+      --earth:      #4a3728;   /* warm body text */
+      --text:       #2d2d2d;
+      --white:      #ffffff;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* Display / headings use Cormorant */
+    h1, h2, h3, h4, h5 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      color: var(--bark);
+      line-height: 1.15;
+    }
+
+    a { text-decoration: none; }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+    #header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(244,128,31,0.12);
+      padding: 10px 0;
+      transition: box-shadow 0.3s;
+    }
+    #header.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.07); }
+
+    .logo-text {
+      font-family: 'Cinzel', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--bark);
+      letter-spacing: 2px;
+    }
+    .logo-text span { color: var(--saffron); }
+    .logo-sub {
+      font-size: 0.55rem;
+      letter-spacing: 3px;
+      color: var(--leaf);
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      margin-top: -4px;
+    }
+
+    .navmenu ul {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      gap: 2rem;
+    }
+    .navmenu ul li a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .navmenu ul li a:hover,
+    .navmenu ul li a.active { color: var(--saffron); }
+
+    .btn-book {
+      background: var(--saffron);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 9px 26px;
+      border-radius: 40px;
+      border: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-book:hover { background: #d96f18; color: #fff; transform: scale(1.02); }
+
+    /* Mobile nav */
+    .mobile-nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--bark);
+      background: none;
+      border: none;
+    }
+    @media (max-width: 991px) {
+      .mobile-nav-toggle { display: block; }
+      .navmenu { display: none; position: absolute; top: 64px; left: 0; right: 0;
+        background: #fff; border-bottom: 2px solid var(--saffron); z-index: 999; }
+      .navmenu.open { display: block; }
+      .navmenu ul { flex-direction: column; padding: 20px 24px; gap: 0; }
+      .navmenu ul li { border-bottom: 1px solid #f0ede7; }
+      .navmenu ul li a { display: block; padding: 12px 0; font-size: 0.9rem; }
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+    #hero {
+      background: linear-gradient(135deg, #fff8f0 0%, #fdf3e3 60%, #f6f9f0 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative mandala ring */
+    #hero::before {
+      content: '';
+      position: absolute;
+      right: -180px; top: 50%;
+      transform: translateY(-50%);
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      border: 80px solid rgba(244,128,31,0.05);
+      pointer-events: none;
+    }
+    #hero::after {
+      content: '';
+      position: absolute;
+      right: -60px; top: 50%;
+      transform: translateY(-50%);
+      width: 480px; height: 480px;
+      border-radius: 50%;
+      border: 40px solid rgba(131,205,42,0.06);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--leaf);
+      margin-bottom: 16px;
+    }
+    #hero h1 {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: var(--bark);
+    }
+    #hero h1 em {
+      font-style: italic;
+      color: var(--saffron);
+    }
+    #hero p.lead {
+      font-size: 1.1rem;
+      color: #4a5a47;
+      max-width: 520px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .btn-primary-ayu {
+      background: var(--saffron);
+      color: #fff;
+      border: none;
+      padding: 13px 40px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    .btn-primary-ayu:hover { background: #d96f18; color: #fff; transform: scale(1.02); }
+
+    .btn-ghost-ayu {
+      background: transparent;
+      color: var(--bark);
+      border: 2px solid rgba(30,43,28,0.25);
+      padding: 11px 36px;
+      border-radius: 60px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    .btn-ghost-ayu:hover { border-color: var(--saffron); color: var(--saffron); }
+
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      color: #3d4a3a;
+    }
+    .hero-stat i { color: var(--leaf); font-size: 1rem; }
+
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      max-width: 540px;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 32px;
+      box-shadow: 0 32px 80px -20px rgba(0,0,0,0.2);
+    }
+    .hero-badge {
+      position: absolute;
+      bottom: 32px;
+      left: -20px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 14px 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-badge .icon-wrap {
+      width: 44px; height: 44px;
+      background: rgba(244,128,31,0.1);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      color: var(--saffron);
+    }
+    .hero-badge .stat-val { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--bark); line-height: 1; }
+    .hero-badge .stat-label { font-size: 0.7rem; color: #666; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* =========================================================
+       SECTION COMMONS
+    ========================================================= */
+    section { padding: 80px 0; }
+    .light-bg { background: var(--mist); }
+    .sand-bg { background: var(--sand); }
+
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--leaf);
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .section-heading {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--bark);
+      margin-bottom: 16px;
+    }
+    .section-heading em { font-style: italic; color: var(--saffron); }
+    .underline-accent {
+      display: block;
+      width: 48px;
+      height: 3px;
+      background: var(--saffron);
+      border-radius: 4px;
+      margin: 12px 0 24px;
+    }
+    .underline-accent.center { margin-left: auto; margin-right: auto; }
+    .section-sub {
+      color: #4a5a47;
+      font-size: 1.05rem;
+      max-width: 640px;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+    #about .about-img {
+      border-radius: 28px;
+      box-shadow: 0 24px 64px -16px rgba(0,0,0,0.14);
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+    .about-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .about-bullet .bi {
+      color: var(--saffron);
+      font-size: 1.3rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .about-bullet p { margin: 0; font-size: 1rem; color: #3d4a3a; line-height: 1.6; }
+    .about-bullet strong { color: var(--bark); }
+
+    .dosha-chips {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .dosha-chip {
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .dosha-chip.vata { background: rgba(131,205,42,0.12); color: #3d7020; border: 1px solid rgba(131,205,42,0.3); }
+    .dosha-chip.pitta { background: rgba(244,128,31,0.1); color: #a85c10; border: 1px solid rgba(244,128,31,0.25); }
+    .dosha-chip.kapha { background: rgba(30,43,28,0.06); color: #1e2b1c; border: 1px solid rgba(30,43,28,0.15); }
+
+    /* =========================================================
+       THERAPIES
+    ========================================================= */
+    #therapies { background: var(--sand); }
+
+    .therapy-card {
+      background: #fff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+      border: 1px solid #ede8e0;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .therapy-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(244,128,31,0.10);
+      border-color: var(--saffron);
+    }
+    .therapy-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .therapy-card-img-placeholder {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #fef3e2 0%, #f6f9f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .therapy-card-img-placeholder i {
+      font-size: 3rem;
+      color: var(--saffron);
+      opacity: 0.45;
+    }
+    .therapy-card-body {
+      padding: 24px 22px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .therapy-card-icon {
+      width: 44px; height: 44px;
+      background: rgba(244,128,31,0.09);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      color: var(--saffron);
+      margin-bottom: 14px;
+    }
+    .therapy-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--bark);
+    }
+    .therapy-card p {
+      font-size: 0.9rem;
+      color: #4a5a47;
+      line-height: 1.65;
+      flex: 1;
+    }
+    .therapy-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--leaf);
+      border-top: 1px solid #ede8e0;
+      padding-top: 12px;
+      width: 100%;
+    }
+
+    /* =========================================================
+       CONDITIONS
+    ========================================================= */
+    #conditions { background: #fff; }
+    .condition-badge {
+      display: inline-block;
+      background: var(--mist);
+      color: var(--bark);
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 4px 5px;
+      border: 1px solid rgba(131,205,42,0.2);
+      transition: 0.15s;
+      cursor: default;
+    }
+    .condition-badge:hover {
+      background: var(--leaf);
+      color: #fff;
+      border-color: var(--leaf);
+    }
+
+    /* =========================================================
+       WHY AYU  (small trust strip)
+    ========================================================= */
+    #why { background: var(--bark); }
+    .why-item {
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .why-item .num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--saffron);
+      line-height: 1;
+    }
+    .why-item .num sup { font-size: 1.4rem; vertical-align: super; }
+    .why-item p { color: rgba(255,255,255,0.7); font-size: 0.85rem; margin: 6px 0 0; letter-spacing: 0.5px; }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+    #contact { background: var(--sand); }
+
+    .contact-info-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+      height: 100%;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .contact-info-item:last-child { margin-bottom: 0; }
+    .contact-info-icon {
+      width: 48px; height: 48px;
+      background: rgba(244,128,31,0.09);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      color: var(--saffron);
+      flex-shrink: 0;
+    }
+    .contact-info-item h6 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      color: var(--bark);
+    }
+    .contact-info-item p { margin: 0; font-size: 0.9rem; color: #4a5a47; line-height: 1.7; }
+    .contact-info-item a { color: #4a5a47; transition: color 0.2s; }
+    .contact-info-item a:hover { color: var(--saffron); }
+
+    .contact-form-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+    }
+    .contact-form-card .form-control {
+      border: 1.5px solid #e8e2d8;
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 0.9rem;
+      background: var(--sand);
+      transition: border-color 0.2s;
+    }
+    .contact-form-card .form-control:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(244,128,31,0.1);
+      background: #fff;
+    }
+    .contact-form-card label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--earth);
+      margin-bottom: 6px;
+    }
+
+    /* =========================================================
+       MAP
+    ========================================================= */
+    #map-section { background: #fff; padding: 0; }
+    .map-embed {
+      width: 100%;
+      height: 360px;
+      border: none;
+      display: block;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    #footer {
+      background: var(--bark);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 24px;
+    }
+    .footer-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .footer-brand span { color: var(--saffron); }
+    #footer p.tagline {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.6);
+      margin: 0 4px;
+      transition: 0.2s;
+    }
+    .footer-social a:hover { background: var(--saffron); color: #fff; }
+    .footer-divider { border-color: rgba(255,255,255,0.08); margin: 28px 0 20px; }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
+
+    /* =========================================================
+       SCROLL TOP
+    ========================================================= */
+    #scroll-top {
+      position: fixed;
+      right: 24px; bottom: 32px;
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--saffron);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      z-index: 999;
+      box-shadow: 0 4px 16px rgba(244,128,31,0.4);
+    }
+    #scroll-top.active { opacity: 1; pointer-events: all; }
+
+    /* =========================================================
+       UTILITIES & RESPONSIVE
+    ========================================================= */
+    @media (max-width: 768px) {
+      .hero-badge { left: 0; }
+      .hero-image-wrap img { height: 380px; }
+      #about .about-img { height: 320px; }
+      .therapy-card-img, .therapy-card-img-placeholder { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header id="header">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="#hero" class="navbar-brand">
+        <img width="170" height="80"  src="ayu-logo.png" alt="AYU Panchakarma logo">
+        <!--<span class="logo-text">AYU<span>.</span></span>
+        <span class="logo-sub">Panchakarma</span>-->
+      </a>
+
+      <nav class="navmenu" id="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#therapies">Therapies</a></li>
+          <li><a href="#conditions">Conditions</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="#contact" class="btn-book d-none d-md-inline-block">Book Consultation</a>
+        <button class="mobile-nav-toggle bi bi-list" id="mobileToggle" aria-label="Toggle menu"></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section id="hero">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+
+          <div class="col-lg-6">
+            <p class="hero-eyebrow">Authentic Ayurvedic Healing</p>
+            <h1>Restore Balance.<br><em>Renew</em> the Body.<br>Revive the Soul.</h1>
+            <p class="lead mt-3">
+              Five-step Panchakarma detoxification designed to eliminate deep-rooted toxins and rebalance your Vata, Pitta, and Kapha — tailored individually for you.
+            </p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="#therapies" class="btn-primary-ayu">Explore Therapies</a>
+              <a href="#contact" class="btn-ghost-ayu">Book Consultation</a>
+            </div>
+            <div class="d-flex flex-wrap gap-4 mt-4">
+              <div class="hero-stat"><i class="bi bi-check-circle-fill"></i> 7 specialised therapies</div>
+              <div class="hero-stat"><i class="bi bi-check-circle-fill"></i> 40+ conditions treated</div>
+              <div class="hero-stat"><i class="bi bi-check-circle-fill"></i> Nairobi · UK · India</div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="hero-image-wrap">
+              <img src="shirodhara.avif"
+                   onerror="this.src='shirodhara-01.jpg'; this.onerror=null;"
+                   alt="Shirodhara Ayurvedic therapy"
+                   class="img-fluid">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5">
+            <img src="abhyang.jpeg" alt="Abhyanga therapy at AYU" class="about-img"
+                 onerror="this.style.background='linear-gradient(135deg,#fef3e2,#f6f9f0)'; this.src=''; this.alt='';">
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <span class="section-eyebrow">Who We Are</span>
+            <h2 class="section-heading">Ancient Science.<br><em>Modern</em> Care.</h2>
+            <span class="underline-accent"></span>
+            <p class="section-sub mb-4">
+              Ayurvedic Panchakarma is an intensive, five-step detoxification and rejuvenation therapy. Rooted in classical Ayurveda, AYU brings this centuries-old science to Nairobi, the UK, and India — offering each patient an individualised combination of therapeutic treatments designed to cleanse specific bodily systems.
+            </p>
+            <div class="about-bullet">
+              <i class="bi bi-flower1"></i>
+              <p><strong>Individualised treatment plans</strong> — every therapy is customised to your unique dosha constitution and health history.</p>
+            </div>
+            <div class="about-bullet">
+              <i class="bi bi-droplet"></i>
+              <p><strong>Classical herbal preparations</strong> — medicated oils, ghee, and powders sourced and prepared according to traditional Ayurvedic texts.</p>
+            </div>
+            <div class="about-bullet">
+              <i class="bi bi-globe-europe-africa"></i>
+              <p><strong>Three global locations</strong> — accessible in Nairobi (Kenya), United Kingdom, and India.</p>
+            </div>
+            <div class="dosha-chips">
+              <span class="dosha-chip vata">Vata</span>
+              <span class="dosha-chip pitta">Pitta</span>
+              <span class="dosha-chip kapha">Kapha</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY STRIP ===================== -->
+    <section id="why" style="padding: 20px 0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <div class="why-item">
+              <div class="num">7</div>
+              <p>Panchakarma Therapies</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="why-item">
+              <div class="num">40<sup>+</sup></div>
+              <p>Conditions Treated</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="why-item">
+              <div class="num">3</div>
+              <p>Global Locations</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="why-item">
+              <div class="num">100<sup>%</sup></div>
+              <p>Natural &amp; Personalised</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== THERAPIES ===================== -->
+    <section id="therapies">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow">Our Treatments</span>
+          <h2 class="section-heading">Panchakarma <em>Therapies</em></h2>
+          <span class="underline-accent center"></span>
+          <p class="section-sub mx-auto">Seven specialised treatments, each targeting specific dosha imbalances and chronic conditions — designed for deep healing.</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <!-- Shirodhara -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="shirodhara-01.jpg" alt="Shirodhara therapy" class="therapy-card-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;">
+                <i class="bi bi-water"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-water"></i></div>
+                <h4>Shirodhara</h4>
+                <p>A continuous stream of warm medicated liquid — herbal oil, milk, or buttermilk — poured gently over the forehead. Deeply relaxes the nervous system; indicated for stress, insomnia, and anxiety.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Nervous System · Mind</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nasya -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="nasya.jpg" alt="Nasya therapy" class="therapy-card-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;">
+                <i class="bi bi-lungs"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-lungs"></i></div>
+                <h4>Nasya</h4>
+                <p>Gentle administration of herbal oils, ghee, or powders into the nostrils. Detoxifies and nourishes the head and neck — targeting congestion, sinus issues, migraines, and mental stress.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Head · Sinus · Migraine</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vasti -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="vasti.jpg" alt="Vasti therapy" class="therapy-card-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;">
+                <i class="bi bi-droplet-half"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-droplet-half"></i></div>
+                <h4>Vasti (Basti)</h4>
+                <p>Medicated enema therapy — detoxifies the colon, balances Vata dosha, and nourishes deep tissues. Considered half of all Ayurvedic therapeutics due to its far-reaching restorative effects.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Colon · Vata · Digestion</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Janu Vasti -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="janu-vasti.jpg" alt="Janu Vasti therapy" class="therapy-card-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;">
+                <i class="bi bi-person-walking"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-person-walking"></i></div>
+                <h4>Janu Vasti</h4>
+                <p>Warm medicated herbal oil retained over the knee joint inside a black gram dough dam. Highly effective for knee pain, stiffness, joint degeneration, and osteoarthritis.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Knees · Joints · Arthritis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kati Vasti -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="kati-vasti.jpg" alt="Kati Vasti therapy" class="therapy-card-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;">
+                <i class="bi bi-back"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-back"></i></div>
+                <h4>Kati Vasti</h4>
+                <p>Warm medicated oil pooled over the lower back within a dough dam. Provides deep tissue heat — pacifying Vata to relieve chronic back pain, sciatica, lumbar spondylosis, and muscle spasms.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Back · Sciatica · Spine</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Abhyanga -->
+          <div class="col-md-6 col-lg-4">
+            <div class="therapy-card">
+              <img src="abhyang.jpeg" alt="Abhyanga therapy" class="therapy-card-img"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="therapy-card-img-placeholder" style="display:none;">
+                <i class="bi bi-hand-index-thumb"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-hand-index-thumb"></i></div>
+                <h4>Abhyanga</h4>
+                <p>Rhythmic, full-body warm herbal oil massage. Loosens deep-seated toxins, lubricates joints, and pacifies the nervous system. Oils custom-blended to your dosha and massaged toward the heart.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Full Body · Lymphatic · Dosha</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Punah Garbha Pravesh -->
+          <div class="col-md-6 col-lg-4 mx-auto">
+            <div class="therapy-card">
+              <div class="therapy-card-img-placeholder" style="background: linear-gradient(135deg,#1e2b1c,#2d4028);">
+                <i class="bi bi-stars" style="color: rgba(244,128,31,0.7); font-size: 3rem;"></i>
+              </div>
+              <div class="therapy-card-body">
+                <div class="therapy-card-icon"><i class="bi bi-arrow-repeat"></i></div>
+                <h4>Punah Garbha Pravesh</h4>
+                <p>"Re-entering the womb" — an intensive Panchakarma protocol that combines deep bio-purification with spiritual and yogic renewal, facilitating a profound rebirth of the body, mind, and spirit.</p>
+                <span class="therapy-tag"><i class="bi bi-arrow-right me-1"></i> Rebirth · Spirit · Deep Detox</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONDITIONS ===================== -->
+    <section id="conditions" class="light-bg">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow">Conditions We Address</span>
+          <h2 class="section-heading">Healing Over <em>40+ Conditions</em></h2>
+          <span class="underline-accent center"></span>
+          <p class="section-sub mx-auto">From chronic pain to metabolic disorders — Ayurvedic Panchakarma works holistically to address the root cause of disease.</p>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center">
+          <span class="condition-badge">Rheumatoid Arthritis</span>
+          <span class="condition-badge">Osteoarthritis</span>
+          <span class="condition-badge">Frozen Shoulder</span>
+          <span class="condition-badge">Kidney &amp; Liver Disorders</span>
+          <span class="condition-badge">Bartholin Cyst</span>
+          <span class="condition-badge">PolyCystic Ovary (PCOD)</span>
+          <span class="condition-badge">Infertility</span>
+          <span class="condition-badge">Period Pain</span>
+          <span class="condition-badge">Period Related Disorders</span>
+          <span class="condition-badge">Diabetes</span>
+          <span class="condition-badge">Asthma</span>
+          <span class="condition-badge">Hypertension</span>
+          <span class="condition-badge">Cholesterol</span>
+          <span class="condition-badge">Sciatica</span>
+          <span class="condition-badge">Skin Disease</span>
+          <span class="condition-badge">Sinusitis</span>
+          <span class="condition-badge">Migraine</span>
+          <span class="condition-badge">Allergy</span>
+          <span class="condition-badge">Obesity</span>
+          <span class="condition-badge">Paralysis</span>
+          <span class="condition-badge">Low Back Pain</span>
+          <span class="condition-badge">Knee Pain</span>
+          <span class="condition-badge">All Types of Pain</span>
+          <span class="condition-badge">All Chronic Diseases</span>
+          <span class="condition-badge">Neuro Muscular Disease</span>
+          <span class="condition-badge">Motor Neuron Disease</span>
+          <span class="condition-badge">Auto Immune Disease</span>
+          <span class="condition-badge">Gas, Acidity &amp; Bloating</span>
+          <span class="condition-badge">Indigestion</span>
+          <span class="condition-badge">Thyroid</span>
+          <span class="condition-badge">Parkinson's</span>
+          <span class="condition-badge">Dementia</span>
+          <span class="condition-badge">Alzheimer's</span>
+          <span class="condition-badge">Muscular Dystrophy</span>
+          <span class="condition-badge">Insomnia</span>
+          <span class="condition-badge">Hernia</span>
+        </div>
+        <div class="text-center mt-5">
+          <a href="#contact" class="btn-primary-ayu">Ask About Your Condition</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-eyebrow">Get in Touch</span>
+          <h2 class="section-heading">Begin Your <em>Healing Journey</em></h2>
+          <span class="underline-accent center"></span>
+          <p class="section-sub mx-auto">Reach us in Nairobi, the UK, or India. Our practitioners are here to guide you.</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-5">
+            <div class="contact-info-card">
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                <div>
+                  <h6>Nairobi, Kenya</h6>
+                  <p>1st Parklands Avenue<br>Near M.P Shah Hospital, Nairobi</p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+                <div>
+                  <h6>Phone &amp; WhatsApp</h6>
+                  <p>
+                    <strong>Kenya:</strong> <a href="tel:+254743499523">+254 743 499 523</a><br>
+                    <strong>UK:</strong> <a href="tel:+447352337585">+44 7352 337 585</a><br>
+                    <strong>India:</strong> <a href="tel:+918871460614">+91 88714 60614</a>
+                  </p>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="bi bi-clock-fill"></i></div>
+                <div>
+                  <h6>Clinic Hours</h6>
+                  <p>Mon – Sat: 8:00 AM – 7:00 PM<br>Sunday: By appointment only</p>
+                </div>
+              </div>
+              <div class="d-flex gap-3 mt-3 flex-wrap">
+                <a href="https://wa.me/254743499523" target="_blank" class="btn-primary-ayu" style="font-size:0.8rem; padding: 9px 22px;">
+                  <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                </a>
+                <a href="tel:+254743499523" class="btn-ghost-ayu" style="font-size:0.8rem; padding: 8px 22px;">
+                  <i class="bi bi-telephone me-1"></i> Call Us
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <div class="contact-form-card">
+              <h4 style="font-size:1.4rem; margin-bottom: 24px;">Send us a Message</h4>
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label>Your Name</label>
+                  <input type="text" class="form-control" placeholder="Full name">
+                </div>
+                <div class="col-md-6">
+                  <label>Email Address</label>
+                  <input type="email" class="form-control" placeholder="you@example.com">
+                </div>
+                <div class="col-md-6">
+                  <label>Phone Number</label>
+                  <input type="tel" class="form-control" placeholder="+254 ...">
+                </div>
+                <div class="col-md-6">
+                  <label>Condition / Interest</label>
+                  <input type="text" class="form-control" placeholder="e.g. Back pain, Stress...">
+                </div>
+                <div class="col-12">
+                  <label>Message</label>
+                  <textarea class="form-control" rows="4" placeholder="Tell us about your health concern or the therapy you're interested in..."></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="button" class="btn-primary-ayu w-100" style="padding: 14px;">Send Message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MAP ===================== -->
+    <section id="map-section">
+      <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d276.24608146551384!2d36.81264958625286!3d-1.2619665108343308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sshayona!5e1!3m2!1sen!2ske!4v1782462221961!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="AYU Panchakarma location – Nairobi">></iframe>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row gy-4 align-items-start">
+        <div class="col-md-4">
+          <div class="footer-brand pb-3" >
+            <img width="200" height="80" src="ayu-logo.png" alt="AYU Panchakarma logo">
+          </div>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://wa.me/254743499523" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Therapies</p>
+          <ul style="list-style:none; padding:0; margin:0;">
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem; transition:color 0.2s;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Shirodhara</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Nasya</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Vasti (Basti)</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Janu Vasti</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Kati Vasti</a></li>
+            <li style="margin-bottom:6px;"><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Abhyanga</a></li>
+            <li><a href="#therapies" style="color:rgba(255,255,255,0.55); font-size:0.88rem;" onmouseover="this.style.color='#f4801f'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Punah Garbha Pravesh</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <p style="font-size:0.8rem; text-transform:uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.4); margin-bottom: 12px;">Contact</p>
+          <p style="font-size:0.88rem; color:rgba(255,255,255,0.55); line-height:1.9;">
+            <i class="bi bi-geo-alt me-2" style="color:#f4801f;"></i> 1st Parklands Ave, Nairobi<br>
+            <i class="bi bi-telephone me-2" style="color:#f4801f;"></i> <a href="tel:+254743499523" style="color:rgba(255,255,255,0.55);">+254 743 499 523</a><br>
+            <i class="bi bi-telephone me-2" style="color:#f4801f;"></i> <a href="tel:+447352337585" style="color:rgba(255,255,255,0.55);">+44 7352 337 585</a><br>
+            <i class="bi bi-telephone me-2" style="color:#f4801f;"></i> <a href="tel:+918871460614" style="color:rgba(255,255,255,0.55);">+91 88714 60614</a>
+          </p>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+        <p class="footer-copy mb-0">© 2026 AYU Panchakarma. All Rights Reserved.</p>
+        <p class="footer-copy mb-0">Nairobi · United Kingdom · India</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#hero" id="scroll-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  (function () {
+    "use strict";
+
+    /* --- Mobile nav toggle --- */
+    const toggleBtn = document.getElementById('mobileToggle');
+    const navmenu   = document.getElementById('navmenu');
+    toggleBtn.addEventListener('click', () => {
+      navmenu.classList.toggle('open');
+      toggleBtn.classList.toggle('bi-list');
+      toggleBtn.classList.toggle('bi-x');
+    });
+    navmenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navmenu.classList.remove('open');
+        toggleBtn.classList.add('bi-list');
+        toggleBtn.classList.remove('bi-x');
+      });
+    });
+
+    /* --- Header shadow on scroll --- */
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* --- Scroll-top button --- */
+    const scrollTop = document.getElementById('scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTop.classList.toggle('active', window.scrollY > 200);
+    });
+    scrollTop.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* --- Navmenu active link scrollspy --- */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.navmenu a');
+    function scrollSpy() {
+      const pos = window.scrollY + 120;
+      sections.forEach(sec => {
+        if (pos >= sec.offsetTop && pos <= sec.offsetTop + sec.offsetHeight) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector('.navmenu a[href="#' + sec.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', scrollSpy);
+    scrollSpy();
+
+    /* --- Fade-in on scroll --- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.therapy-card, .contact-info-card, .contact-form-card, .condition-badge, .about-bullet').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(el);
+    });
+
+  })();
+  </script>
+
+</body>
+</html>
