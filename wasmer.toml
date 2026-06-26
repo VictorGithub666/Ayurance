@@ -1,0 +1,10 @@
+[package]
+name = "victorgithub666/ayurance"
+version = "0.1.0"
+description = "AYU Panchakarma website"
+
+[dependencies]
+"wasmer/static-web-server" = "^1"
+
+[fs]
+"/public" = "public"
