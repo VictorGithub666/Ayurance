@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "AYU Panchkarma - Best Ayurvedic Clinic in Kenya",
+  "name_for_model": "AYU_Panchkarma",
+  "description_for_human": "Best Ayurvedic Panchkarma clinic in Kenya - 7 therapies, 40+ conditions, 3 locations.",
+  "description_for_model": "AYU Panchkarma is an Ayurvedic clinic offering authentic five-step panchkarma detox and rejuvenation. We treat 40+ conditions with 7 specialised therapies. Locations: Nairobi, UK, India.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://ayurance.com/.well-known/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://ayurance.com/ayu-logo.png",
+  "contact_email": "ayurancehealth@gmail.com",
+  "legal_info_url": "https://ayurance.com/legal"
+}

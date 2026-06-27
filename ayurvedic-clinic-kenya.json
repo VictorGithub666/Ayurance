@@ -1,0 +1,139 @@
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "AYU Panchkarma",
+  "alternateName": "AYU Ayurvedic Clinic",
+  "description": "Best Ayurvedic Panchkarma clinic in Kenya. Authentic five-step detoxification and rejuvenation with 7 specialised therapies treating 40+ conditions.",
+  "url": "https://ayurance.com",
+  "telephone": "+254743499523",
+  "email": "ayurancehealth@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1st Parklands Avenue, Near M.P Shah Hospital",
+    "addressLocality": "Nairobi",
+    "addressCountry": "Kenya",
+    "postalCode": "00100"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "-1.2619665",
+    "longitude": "36.8126496"
+  },
+  "openingHours": [
+    "Mon-Sat 08:00-19:00",
+    "Sun 09:00-13:00"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "09:00",
+      "closes": "13:00"
+    }
+  ],
+  "medicalSpecialty": "AyurvedicMedicine",
+  "availableService": [
+    {
+      "@type": "MedicalProcedure",
+      "name": "Vamana",
+      "description": "Controlled therapeutic emesis to expel excess Kapha dosha"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Virechana",
+      "description": "Therapeutic purgation to eliminate excess Pitta dosha"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Vasti",
+      "description": "Medicated enema to balance Vata dosha"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Raktamoksha",
+      "description": "Blood purification therapy"
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "Nasya",
+      "description": "Nasal administration of medicinal oils"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Panchkarma Therapies",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vamana Therapy",
+          "description": "Therapeutic vomiting for Kapha disorders"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Virechana Therapy",
+          "description": "Therapeutic purgation for Pitta disorders"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vasti Therapy",
+          "description": "Therapeutic enema for Vata disorders"
+        }
+      }
+    ]
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Nairobi"
+    },
+    {
+      "@type": "Country",
+      "name": "Kenya"
+    },
+    {
+      "@type": "Country",
+      "name": "United Kingdom"
+    },
+    {
+      "@type": "Country",
+      "name": "India"
+    }
+  ],
+  "sameAs": [
+    "https://twitter.com/your-ayuranchkarma",
+    "https://facebook.com/your-ayuranchkarma",
+    "https://instagram.com/your-ayuranchkarma",
+    "https://youtube.com/your-ayuranchkarma"
+  ],
+  "award": "Best Ayurvedic Clinic in Kenya 2026",
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4.9",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Patient Review"
+      },
+      "reviewBody": "The best Ayurvedic panchkarma clinic in Kenya. Authentic treatments with amazing results."
+    }
+  ],
+  "keywords": "ayurvedic clinic kenya, panchkarma nairobi, ayurvedic detox, best ayurveda kenya, ayurvedic treatment, vamana, virechana, vasti, raktamoksha, nasya"
+}

@@ -1,0 +1,5 @@
+Contact: mailto:ayurancehealth@gmail.com
+Expires: 2027-06-27T00:00:00.000Z
+Acknowledgments: https://ayurance.com/acknowledgments
+Preferred-Languages: en, sw, hi
+Canonical: https://ayurance.com/
