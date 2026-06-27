@@ -1022,7 +1022,7 @@
       </div>
     </section>
 
-    <!-- ===================== CONTACT (unchanged) ===================== -->
+    <!-- ===================== CONTACT (UPDATED with Web3Forms) ===================== -->
     <section id="contact">
       <div class="container">
         <div class="text-center mb-5">
@@ -1073,30 +1073,65 @@
           <div class="col-lg-7">
             <div class="contact-form-card">
               <h4 style="font-size:1.4rem; margin-bottom: 24px;">Send us a Message</h4>
-              <div class="row gy-3">
-                <div class="col-md-6">
-                  <label>Your Name</label>
-                  <input type="text" class="form-control" placeholder="Full name">
+
+              <!-- Web3Forms Integration -->
+              <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+                <!-- Access Key -->
+                <input type="hidden" name="access_key" value="32cda98f-729a-4af6-9102-79398ecee93e">
+
+                <!-- Form Spam Protection -->
+                <input type="hidden" name="subject" value="New Consultation Request - AYU Panchkarma">
+                <input type="hidden" name="from_name" value="AYU Panchkarma Website">
+
+                <!-- Redirect after success (optional) -->
+                <input type="hidden" name="redirect" value="https://ayurance.com/thank-you.html">
+
+                <div class="row gy-3">
+                  <div class="col-md-6">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Full name" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="+254 ...">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="condition">Condition / Interest</label>
+                    <input type="text" class="form-control" id="condition" name="condition" placeholder="e.g. Back pain, Stress...">
+                  </div>
+                  <div class="col-12">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Tell us about your health concern or the therapy you're interested in..." required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <!-- Honeypot spam protection -->
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                    <button type="submit" class="btn-primary-ayu w-100" style="padding: 14px;" id="submitBtn">
+                      <span id="btnText">Send Message</span>
+                      <span id="btnSpinner" style="display: none;">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Sending...
+                      </span>
+                    </button>
+                  </div>
                 </div>
-                <div class="col-md-6">
-                  <label>Email Address</label>
-                  <input type="email" class="form-control" placeholder="you@example.com">
-                </div>
-                <div class="col-md-6">
-                  <label>Phone Number</label>
-                  <input type="tel" class="form-control" placeholder="+254 ...">
-                </div>
-                <div class="col-md-6">
-                  <label>Condition / Interest</label>
-                  <input type="text" class="form-control" placeholder="e.g. Back pain, Stress...">
-                </div>
-                <div class="col-12">
-                  <label>Message</label>
-                  <textarea class="form-control" rows="4" placeholder="Tell us about your health concern or the therapy you're interested in..."></textarea>
-                </div>
-                <div class="col-12">
-                  <button type="button" class="btn-primary-ayu w-100" style="padding: 14px;">Send Message</button>
-                </div>
+              </form>
+
+              <!-- Success Message (hidden by default) -->
+              <div id="successMessage" style="display: none; margin-top: 20px; padding: 16px; background: #d4edda; border-radius: 12px; color: #155724; border: 1px solid #c3e6cb;">
+                <i class="bi bi-check-circle-fill" style="color: #28a745; margin-right: 10px;"></i>
+                <strong>Thank you!</strong> Your message has been sent successfully. We'll get back to you within 24 hours.
+              </div>
+
+              <!-- Error Message (hidden by default) -->
+              <div id="errorMessage" style="display: none; margin-top: 20px; padding: 16px; background: #f8d7da; border-radius: 12px; color: #721c24; border: 1px solid #f5c6cb;">
+                <i class="bi bi-exclamation-circle-fill" style="color: #dc3545; margin-right: 10px;"></i>
+                <strong>Oops!</strong> Something went wrong. Please try again or call us directly.
               </div>
             </div>
           </div>
@@ -1236,6 +1271,66 @@
     });
 
   })();
+  </script>
+
+  <script >// --- Contact Form Handler ---
+    document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const successMsg = document.getElementById('successMessage');
+    const errorMsg = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Show loading state
+      btnText.style.display = 'none';
+      btnSpinner.style.display = 'inline-block';
+      submitBtn.disabled = true;
+
+      // Hide previous messages
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      const formData = new FormData(form);
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          // Success!
+          successMsg.style.display = 'block';
+          form.reset();
+        } else {
+          // Error from API
+          errorMsg.style.display = 'block';
+          console.error('Form error:', data);
+        }
+      })
+      .catch(error => {
+        // Network error
+        errorMsg.style.display = 'block';
+        console.error('Network error:', error);
+      })
+      .finally(() => {
+        // Reset button state
+        btnText.style.display = 'inline-block';
+        btnSpinner.style.display = 'none';
+        submitBtn.disabled = false;
+
+        // Auto-hide messages after 10 seconds
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+          errorMsg.style.display = 'none';
+        }, 10000);
+      });
+    });
+  });
   </script>
 
 </body>
