@@ -9,20 +9,45 @@ Allow: /
 # Sitemap location
 Sitemap: https://ayurance.com/sitemap.xml
 
-# Additional crawler directives
+# Search engines
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# AI answer-engine / search bots (fetch content live to ground chat answers/citations)
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# AI training crawlers (fetch content to train future models, not for live answers)
+# Left open here since you want maximum AI visibility. Set to "Disallow: /" for any
+# of these if you'd rather your content not be used for model training.
 User-agent: GPTBot
 Allow: /
 
 User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 # Crawl delay to be respectful

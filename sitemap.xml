@@ -4,52 +4,21 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage - Highest priority -->
+  <!-- Homepage - this is currently the only real, independently-crawlable URL on the site -->
   <url>
     <loc>https://ayurance.com/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
-  <!-- About Section -->
-  <url>
-    <loc>https://ayurance.com/#about</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Therapies Section -->
-  <url>
-    <loc>https://ayurance.com/#therapies</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Conditions Section -->
-  <url>
-    <loc>https://ayurance.com/#conditions</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://ayurance.com/#contact</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
-  </url>
-
-  <!-- Map Location -->
-  <url>
-    <loc>https://ayurance.com/#map-section</loc>
-    <lastmod>2026-06-27</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.60</priority>
-  </url>
+  <!--
+    Note: #about, #therapies, #conditions, #contact, #map-section were removed.
+    URL fragments (#...) all point to the SAME page (https://ayurance.com/) and are
+    not separately crawlable or indexable — Google ignores everything after the "#".
+    Listing them as separate <url> entries doesn't help SEO and can look like
+    low-quality sitemap padding. If/when you build standalone pages (e.g. a
+    dedicated /therapies/ or /locations/uk/ page), add those real URLs here.
+  -->
 
 </urlset>
