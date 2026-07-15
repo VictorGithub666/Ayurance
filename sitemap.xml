@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Homepage - this is currently the only real, independently-crawlable URL on the site -->
+
+
   <url>
     <loc>https://ayurance.com/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
-  </url>
 
-  <!--
-    Note: #about, #therapies, #conditions, #contact, #map-section were removed.
-    URL fragments (#...) all point to the SAME page (https://ayurance.com/) and are
-    not separately crawlable or indexable — Google ignores everything after the "#".
-    Listing them as separate <url> entries doesn't help SEO and can look like
-    low-quality sitemap padding. If/when you build standalone pages (e.g. a
-    dedicated /therapies/ or /locations/uk/ page), add those real URLs here.
-  -->
+    <!-- Brand -->
+    <image:image>
+      <image:loc>https://ayurance.com/ayu-logo.png</image:loc>
+      <image:title>AYU Panchkarma logo</image:title>
+    </image:image>
+
+    <!-- Panchkarma therapies -->
+    <image:image>
+      <image:loc>https://ayurance.com/vamana.png</image:loc>
+      <image:title>Vamana therapy - therapeutic emesis for Kapha disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/virechana.jpg</image:loc>
+      <image:title>Virechana therapy - therapeutic purgation for Pitta disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/vasti.jpg</image:loc>
+      <image:title>Vasti therapy - medicated enema for Vata disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/raktamokshana.jpg</image:loc>
+      <image:title>Raktamoksha - Ayurvedic blood purification therapy</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/nasya.jpg</image:loc>
+      <image:title>Nasya therapy - nasal administration of medicinal oils</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/janu-vasti.jpg</image:loc>
+      <image:title>Janu Vasti - warm oil therapy for knee joint pain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/kati-vasti.jpg</image:loc>
+      <image:title>Kati Vasti - warm oil therapy for lower back pain</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/abhyang.jpeg</image:loc>
+      <image:title>Abhyanga - full body Ayurvedic oil massage</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/shirodhara.avif</image:loc>
+      <image:title>Shirodhara - continuous oil pouring therapy</image:title>
+    </image:image>
+
+    <!-- Body systems / conditions treated -->
+    <image:image>
+      <image:loc>https://ayurance.com/cardio-vascular-system.jpg</image:loc>
+      <image:title>Ayurvedic treatment for cardiovascular conditions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/circulatory-system.jpg</image:loc>
+      <image:title>Ayurvedic treatment for circulatory system disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/digestive-system.jpg</image:loc>
+      <image:title>Ayurvedic treatment for digestive disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/endocrine-system.jpg</image:loc>
+      <image:title>Ayurvedic treatment for endocrine disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/integumentary-system.webp</image:loc>
+      <image:title>Ayurvedic treatment for skin (integumentary) conditions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/lymphatic-system.jpg</image:loc>
+      <image:title>Ayurvedic treatment for lymphatic system disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/muscular-system.avif</image:loc>
+      <image:title>Ayurvedic treatment for muscular disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/nervous-system.webp</image:loc>
+      <image:title>Ayurvedic treatment for nervous system disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/reproductive-system.webp</image:loc>
+      <image:title>Ayurvedic treatment for reproductive health, PCOD and infertility</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/respiratory-system.jpg</image:loc>
+      <image:title>Ayurvedic treatment for respiratory conditions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/skeletal-system.png</image:loc>
+      <image:title>Ayurvedic treatment for skeletal and joint conditions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/spinal-cord.webp</image:loc>
+      <image:title>Ayurvedic treatment for spinal and neuro-muscular disorders</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://ayurance.com/urinary-system.jpeg</image:loc>
+      <image:title>Ayurvedic treatment for urinary system disorders</image:title>
+    </image:image>
+  </url>
 
 </urlset>
