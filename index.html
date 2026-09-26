@@ -698,30 +698,28 @@
     ========================================================= */
     #testimonials { background: var(--sand); }
     .testimonials-intro { max-width: 620px; margin: 0 auto; }
-    .video-wrapper {
-      position: relative;
-      padding-bottom: 28.125%; /* half of 16:9 */
-      height: 0;
-      overflow: hidden;
-      border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(30,43,28,0.13);
-      max-width: 860px;
+    .testimonial-card {
+      max-width: 680px;
       margin: 0 auto;
-    }
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
       border: none;
       border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(30,43,28,0.12);
     }
-    .video-caption {
+    .testimonial-card .ratio iframe {
+      border: none;
+    }
+    .testimonial-card .card-body {
+      background: var(--white);
+      padding: 18px 24px;
       text-align: center;
-      margin-top: 20px;
+    }
+    .testimonial-card .card-text {
       font-size: 0.88rem;
       color: var(--earth);
       font-style: italic;
       opacity: 0.8;
+      margin: 0;
     }
 
     /* =========================================================
@@ -1166,16 +1164,20 @@
           <span class="underline-accent center"></span>
           <p class="section-sub mx-auto">Genuine stories from people who have walked the path of Ayurvedic healing with us.</p>
         </div>
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/H1T-ziOsTOg"
-            title="Patient Testimonial – AYU Panchkarma"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            loading="lazy">
-          </iframe>
+        <div class="card testimonial-card">
+          <div class="ratio ratio-16x9">
+            <iframe
+              src="https://www.youtube.com/embed/H1T-ziOsTOg"
+              title="Patient Testimonial – AYU Panchkarma"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-text">A patient shares their healing journey at AYU Panchkarma.</p>
+          </div>
         </div>
-        <p class="video-caption">A patient shares their healing journey at AYU Panchkarma.</p>
       </div>
     </section>
 
